@@ -1,20 +1,16 @@
 class Solution {
     public int maxProduct(int[] nums) {
-                for (int i = 0; i < nums.length-1; i++) {
-            for (int j = i+1; j >0; j--) {
-                if (nums[j]< nums[j-1]){
-                    swap(nums,j,j-1);
-                }else {
-                    break;
-                }
+          int max1 = 0;
+        int max2 = 0;
+
+        for (int num : nums) {
+            if (num > max1) {
+                max2 = max1; // Purana sabse bada ab dusra sabse bada ban gaya
+                max1 = num;  // Naya sabse bada mil gaya
+            } else if (num > max2) {
+                max2 = num;  // Agar max1 se chota hai par max2 se bada hai
             }
         }
-        return (nums[nums.length-1]-1)*(nums[nums.length-2]-1);
-
-        }
-       public void swap(int [] nums, int first , int second ){
-        int temp=nums[first];
-        nums[first]= nums[second];
-        nums[second]=temp;
+        return (max1 - 1) * (max2 - 1);
     }
 }
