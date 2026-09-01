@@ -8,7 +8,7 @@ class Solution {
         int mid=-1;
         while(s<=e){
             mid=s+(e-s)/2;
-            if((long)mid*mid>(x)){
+            if((long)mid*mid>(long)x){
                 e=mid-1;
             }
             else if(mid*mid==x){
