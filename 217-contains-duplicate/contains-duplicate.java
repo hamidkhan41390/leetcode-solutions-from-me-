@@ -1,18 +1,13 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        // Store frequency of elements in nums1
-        for (int x : nums) {
-            map.put(x, map.getOrDefault(x, 0) + 1);
+         HashSet<Integer> set = new HashSet<>();
+        for (int i=0; i<nums.length; i++){
+            if(set.contains(nums[i])){
+                return true;
+            }
+            set.add(nums[i]);
         }
-       Object[] values = map.values().toArray();
-
-for (int i = 0; i < values.length; i++) {
-     if ((Integer) values[i] > 1){
-        return true;
-     }
-}
-return false;
+        return false;
+        
     }
 }
