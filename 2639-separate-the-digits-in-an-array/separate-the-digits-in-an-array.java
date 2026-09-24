@@ -13,6 +13,10 @@ class Solution {
                 l.add(st.pop());
             }
         }
-        return l.stream().mapToInt(Integer::intValue).toArray();
+        int []result=new int[l.size()];
+        for(int i=0;i<result.length;i++){
+            result[i]=l.get(i);
+        }
+        return result;
     }
 }
