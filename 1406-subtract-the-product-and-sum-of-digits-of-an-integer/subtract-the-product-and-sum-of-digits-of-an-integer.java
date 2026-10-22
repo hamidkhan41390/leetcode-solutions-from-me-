@@ -9,8 +9,8 @@ class Solution {
             mul*=digit;
             temp/=10;
         }
-        int result=mul-sum;
+        
        
-        return result;
+        return mul-sum;
     }
 }
